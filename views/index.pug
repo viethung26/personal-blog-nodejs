@@ -1,0 +1,23 @@
+html
+    head
+        style(type="text/css").
+            .article {
+                width: 500px;
+                margin: auto;
+                padding: 5px;
+                border-bottom: 1px solid #ddd;
+            }
+            .article p {
+                white-space: pre-wrap;
+            }
+            .post-btn {
+                float: right;
+            }
+
+    body
+        button.post-btn
+            a(href="/admin") Create new article
+        each article in articles
+            .article
+                h1= article.title
+                p= article.content

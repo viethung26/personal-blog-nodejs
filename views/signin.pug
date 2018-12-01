@@ -1,0 +1,23 @@
+html
+    head
+        style(type="text/css").
+            form {
+                width: 200px;
+                margin-left: 100px;
+            }
+            input {
+                width: 100%;
+                padding: 5px;
+            }
+    body
+        button
+            a(href="/") Back
+        form(action="/users/signin", method="post")
+            input(type="text", name="username", placeholder="Username", required)
+            input(type="password", name="password", placeholder="Password", required)
+            button(type="submit")= 'Sign In'
+        form(action="/users/signup", method="post")
+            input(type="text", name="username", placeholder="Username", required)
+            input(type="password", name="password", placeholder="Password", required)
+            input(type="text", name="fullname", placeholder="Full name", required)
+            button(type="submit")= 'Sign Up'

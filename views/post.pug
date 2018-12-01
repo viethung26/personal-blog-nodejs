@@ -1,0 +1,26 @@
+html
+    head
+        style(type="text/css").
+            form {
+                width: 500px;
+                margin: auto;
+            }
+            input {
+                width: 100%;
+                padding: 5px;
+            }
+            textarea {
+                width: 500px;
+                resize: vertical;
+            }
+    body
+        button.back-btn
+            a(href="/") Back
+        button.signout-btn
+            a(href="/users/signout") Sign Out
+        form(action="/articles", method="post")
+            input(type="text", name="title", placeholder="Title")
+            br
+            textarea(name="content",rows="10", placeholder="Write content") 
+            br
+            button(type="submit")= 'Post'
