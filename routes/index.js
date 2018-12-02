@@ -9,7 +9,7 @@ router.use((req, res, next)=> {
 router.use(bodyParser.urlencoded({extended: false}))
 router.use(bodyParser.json())
 router.get('/', (req, res)=> {
-    Articles.get((result, articles)=> {
+    Articles.getAllInfo((result, articles)=> {
         if(result) {
             res.render('index', {articles})
         }

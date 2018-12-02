@@ -1,6 +1,9 @@
 html
     head
         style(type="text/css").
+            a {
+                text-decoration: none;
+            }
             .article {
                 width: 500px;
                 margin: auto;
@@ -19,5 +22,11 @@ html
             a(href="/admin") Create new article
         each article in articles
             .article
-                h1= article.title
-                p= article.content
+                h2= article.title
+                p
+                    span 
+                        i= new Date(article.createdAt).toLocaleString('vi-VN')
+                    span  by 
+                        b= article.author.username
+                p= article.content.slice(0,150)+"... "
+                    a(href="/articles/"+article.link) [read more]

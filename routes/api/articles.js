@@ -11,5 +11,16 @@ router.post('/', (req, res)=> {
     } else res.redirect('/admin')
     
 })
+router.get('/:link', (req, res)=> {
+    Articles.getByLink(req.params.link, (result, article)=> {
+        res.render('view-detail', {article})
+    })
+})
+
+router.post('/test', (req, res)=> {
+    Articles.getAllInfo((result, all)=> {
+        res.json(all)
+    })
+})
 
 module.exports = router

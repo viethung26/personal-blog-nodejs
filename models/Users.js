@@ -21,8 +21,8 @@ exports.signup = function(newUser, callback) {
     } else callback(false)
 }
 exports.signin = function (user, callback) {
-    users.findOne({username: user.username, password: user.password}, (err, doc)=> {
-        if(err) callback(false)
+    users.findOne({username: user.username, password: user.password},['username'],  (err, doc)=> {
+        if(err||!doc) callback(false)
         else callback(true, doc)
     })
 }

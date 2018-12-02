@@ -4,9 +4,10 @@ const Users = require('../../models/Users')
 router.post('/signin', (req, res)=> {
     Users.signin(req.body, (result, user)=> {
         if(result){
+            console.log(user)
             req.session.userId = user._id
-            res.redirect('/admin')
-        } else res.send(false)
+        }
+        res.redirect('/admin')
     })
 })
 router.post('/signup', (req, res)=> {
